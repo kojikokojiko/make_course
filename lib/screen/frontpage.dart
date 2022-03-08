@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:make_course/screen/nextpage.dart';
 
 
 class FrontPage extends StatelessWidget {
@@ -33,7 +33,7 @@ class FrontPage extends StatelessWidget {
                 ),
               ),
               onPressed: (){
-
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Nextpage()));
               },
             ),
           ),
