@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:make_course/model/course_data.dart';
+import "package:provider/provider.dart";
+import 'package:make_course/model/course_data.dart';
+import "package:make_course/screen/frontpage.dart";
+import 'firstpointpage.dart';
+class Nextpage extends StatefulWidget {
+  @override
+  _NextpageState createState() => _NextpageState();
+}
 
-class Nextpage extends StatelessWidget {
-
+class _NextpageState extends State<Nextpage> {
   @override
   Widget build(BuildContext context) {
+
+    double? winddirect;
+    double? courselength;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -15,24 +27,37 @@ class Nextpage extends StatelessWidget {
 
               children: <Widget>[
                 TextFormField(
+                  keyboardType: TextInputType.number,
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly
+                  ],
                   textAlign: TextAlign.center,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
 
                     hintText: "距離(m)を入力",
                     prefixIcon: Icon(Icons.bar_chart),
-
-
                   ),
+                  onChanged: (value1){
+                    print(value1);
+                    courselength=double.parse(value1);
+                    print(courselength);
+
+                  },
+
                 ),
                 SizedBox(height: 20),
 
                 TextFormField(
+                  keyboardType: TextInputType.number,
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly
+                  ],
                   textAlign: TextAlign.center,
                   decoration: const InputDecoration(
                     // contentPadding: EdgeInsets.all(10),
                       border: OutlineInputBorder(),
-                      hintText: "風速(m/s)を入力",
+                      hintText: "風向を入力",
                       prefixIcon: Icon(Icons.air),
                       enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(
@@ -40,6 +65,12 @@ class Nextpage extends StatelessWidget {
                         )
                       )
                   ),
+                  onChanged: (value2){
+
+                    winddirect=double.parse(value2);
+                    print(winddirect);
+                    print(courselength);
+                  },
                 ),
                 SizedBox(height: 50),
                 ElevatedButton(
@@ -60,7 +91,18 @@ class Nextpage extends StatelessWidget {
                     ),
                   ),
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Nextpage()));
+                    // print(data.course_length);
+                    // print(data.wind_direct);
+                    print(courselength);
+                    print(winddirect);
+                    print("dfdf");
+                    Provider.of<CourseData>(context,listen: false).set_wind_direct(winddirect);
+                    Provider.of<CourseData>(context,listen: false).set_coure_length(courselength);
+                    print(Provider.of<CourseData>(context,listen: false).wd);
+                    // print(Provider.of<CourseData>(context).wind_direct);
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPointPage()));
+
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>Nextpage()));
                   },
                 ),
 

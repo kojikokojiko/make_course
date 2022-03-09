@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:make_course/model/course_data.dart';
 import 'package:make_course/screen/nextpage.dart';
+import 'package:provider/provider.dart';
 
 
 class FrontPage extends StatelessWidget {
