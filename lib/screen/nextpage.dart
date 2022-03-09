@@ -19,8 +19,8 @@ class Nextpage extends StatelessWidget {
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
 
-                    hintText: "距離を入力",
-                    prefixIcon: Icon(Icons.bar_chart,color: Colors.blue),
+                    hintText: "距離(m)を入力",
+                    prefixIcon: Icon(Icons.bar_chart),
 
 
                   ),
@@ -32,16 +32,37 @@ class Nextpage extends StatelessWidget {
                   decoration: const InputDecoration(
                     // contentPadding: EdgeInsets.all(10),
                       border: OutlineInputBorder(),
-                      hintText: "風速を入力",
-                      prefixIcon: Icon(Icons.air,color: Colors.blue),
+                      hintText: "風速(m/s)を入力",
+                      prefixIcon: Icon(Icons.air),
                       enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.blue
                         )
                       )
-
                   ),
-                )
+                ),
+                SizedBox(height: 50),
+                ElevatedButton(
+                  child:const Text(
+                    "コースを作る",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.all(15),
+                    primary: Colors.blue,
+                    onPrimary: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                  ),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Nextpage()));
+                  },
+                ),
 
               ],
             ),
