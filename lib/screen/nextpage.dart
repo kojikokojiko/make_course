@@ -13,7 +13,7 @@ class Nextpage extends StatefulWidget {
 class _NextpageState extends State<Nextpage> {
   @override
   Widget build(BuildContext context) {
-
+    final CourseData data=Provider.of<CourseData>(context,listen: false);
     double? winddirect;
     double? courselength;
     return Scaffold(
@@ -93,12 +93,12 @@ class _NextpageState extends State<Nextpage> {
                   onPressed: (){
                     // print(data.course_length);
                     // print(data.wind_direct);
-                    print(courselength);
-                    print(winddirect);
-                    print("dfdf");
-                    Provider.of<CourseData>(context,listen: false).set_wind_direct(winddirect);
-                    Provider.of<CourseData>(context,listen: false).set_coure_length(courselength);
-                    print(Provider.of<CourseData>(context,listen: false).wd);
+                    // print(courselength);
+                    // print(winddirect);
+                    // print("dfdf");
+                    data.set_wind_direct(winddirect);
+                    data.set_coure_length(courselength);
+                    // print(data.wd);
                     // print(Provider.of<CourseData>(context).wind_direct);
                     // Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPointPage()));
 
