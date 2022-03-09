@@ -98,9 +98,9 @@ class _NextpageState extends State<Nextpage> {
                     // print("dfdf");
                     data.set_wind_direct(winddirect);
                     data.set_coure_length(courselength);
-                    // print(data.wd);
+                    print(data.wd);
                     // print(Provider.of<CourseData>(context).wind_direct);
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPointPage()));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPointPage()));
 
                     // Navigator.push(context, MaterialPageRoute(builder: (context)=>Nextpage()));
                   },
