@@ -100,7 +100,7 @@ class _NextpageState extends State<Nextpage> {
                     data.set_coure_length(courselength);
                     print(data.wd);
                     // print(Provider.of<CourseData>(context).wind_direct);
-                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPointPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPointPage()));
 
                     // Navigator.push(context, MaterialPageRoute(builder: (context)=>Nextpage()));
                   },
