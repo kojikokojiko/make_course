@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import "package:provider/provider.dart";
 import 'package:make_course/model/course_data.dart';
 import 'package:geolocator/geolocator.dart';
-
+import 'package:make_course/screen/downwind.dart';
 class FirstPointPage extends StatefulWidget {
   @override
   State<FirstPointPage> createState() => _FirstPointPageState();
@@ -81,6 +81,8 @@ class _FirstPointPageState extends State<FirstPointPage> {
                 print("pp");
                 print(data.long);
                 print(data.lat);
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>DownWind()));
+
               },
             )
           ],

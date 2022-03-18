@@ -6,8 +6,12 @@ class CourseData extends ChangeNotifier {
    double? _course_length=0;
    double? _latitude=0;
    double? _longtitude=0;
+   double mperlat=110940.5844;
+   double mperlong=91287.788;
 
+   void calc(){
 
+   }
 
   void set_wind_direct(double? Windspeed){
     _wind_direct=Windspeed;
