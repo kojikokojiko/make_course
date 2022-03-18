@@ -3,6 +3,8 @@
    <application
         android:label="make_course"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyACL1SS_cXKEB9XH-N54okm4IyC7y_FjlI"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

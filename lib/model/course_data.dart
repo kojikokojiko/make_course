@@ -1,16 +1,26 @@
 import 'package:flutter/foundation.dart';
 
-
+import 'dart:math';
 class CourseData extends ChangeNotifier {
    double? _wind_direct=0;
    double? _course_length=0;
    double? _latitude=0;
    double? _longtitude=0;
+
+   // 北緯35度の時の一度ずれるごとの距離
    double mperlat=110940.5844;
-   double mperlong=91287.788;
+   double mperlong=91287.7885;
 
-   void calc(){
+   List<double> calc(){
 
+     double theta=2*pi*_wind_direct!/360;
+     double deltalat=_course_length!*cos(theta)/mperlat;
+     double deltalong=_course_length!*sin(theta/mperlong);
+
+     double nextlat=_latitude!-deltalat;
+     double nextlong=_longtitude!-deltalong;
+     List<double> idokeido=[nextlat,nextlong];
+     return idokeido;
    }
 
   void set_wind_direct(double? Windspeed){
