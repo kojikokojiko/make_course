@@ -16,6 +16,9 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
+# make_course
+このアプリは、大学で4年間ヨットに身をささげてきた僕が、現役時代にあったら便利だなとおもった、「ヨットレースにおける、コース設定を手助けしてくれるアプリ」です。
+レベル感はとても低いので期待せずご覧ください。
 
 
 ![スライド2](https://user-images.githubusercontent.com/48917379/162126450-c32b091d-e2c5-4a8e-9dc9-3806c28634cc.JPG)
