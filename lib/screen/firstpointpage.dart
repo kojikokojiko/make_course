@@ -63,7 +63,7 @@ class _FirstPointPageState extends State<FirstPointPage> {
             SizedBox(height: 20),
             ElevatedButton(
               child: const Text(
-                "下マークを設置",
+                "下マークの位置を確認",
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               style: ElevatedButton.styleFrom(
