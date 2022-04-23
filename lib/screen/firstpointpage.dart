@@ -12,8 +12,8 @@ class _FirstPointPageState extends State<FirstPointPage> {
   String _location = "no data";
   String _lat = "no data";
   String _long = "no data";
-  double _dlat=0;
-  double _dlong=0;
+  double? _dlat;
+  double? _dlong;
 
   Future<void> getLocation() async {
     LocationPermission permission;
@@ -48,9 +48,16 @@ class _FirstPointPageState extends State<FirstPointPage> {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "ボタンを押して現在地を取得",
-              style: Theme.of(context).textTheme.headline5,
+            RichText(
+              text: TextSpan(
+                children:[
+                  WidgetSpan(child: Icon(Icons.location_on),
+                  ),
+                  TextSpan(text:"ボタンを押して現在地を取得",style:Theme.of(context).textTheme.headline5,  )
+
+                ]
+
+              ),
             ),
             Text(
               "緯度 $_lat",
@@ -73,15 +80,32 @@ class _FirstPointPageState extends State<FirstPointPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)
                 )
-                
+
               ),
               onPressed: () {
-                data.set_latitude(_dlat);
-                data.set_longtitude(_dlong);
-                print("pp");
-                print(data.long);
-                print(data.lat);
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>DownWind()));
+
+
+                if(_dlat==null ||_dlong==null){
+                  showDialog(
+                      context: context,
+                      builder: (_) {
+                        return AlertDialog(
+                          title: Text("Alert"),
+                          content: Text("緯度経度を取得を取得してください"),
+                        );
+                   });
+                }else{
+                  data.set_latitude(_dlat);
+                  data.set_longtitude(_dlong);
+                  print("pp");
+                  print(data.long);
+                  print(data.lat);
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DownWind()));
+
+                }
+
+
+
 
               },
             )

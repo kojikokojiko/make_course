@@ -101,7 +101,6 @@ class _NextpageState extends State<Nextpage> {
                     ),
                     onPressed: () {
                       if ((courselength == null) || (winddirect == null)) {
-                        print("nulllll");
                         showDialog(
                             context: context,
                             builder: (_) {
@@ -111,10 +110,6 @@ class _NextpageState extends State<Nextpage> {
                               );
                             });
                       } else {
-                        print("dfdf");
-                        print(courselength);
-                        print(winddirect);
-                        print("dfdf");
                         data.set_wind_direct(winddirect);
                         data.set_coure_length(courselength);
                         print(data.wd);
